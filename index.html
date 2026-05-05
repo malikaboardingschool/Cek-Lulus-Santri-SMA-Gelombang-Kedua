@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengumuman Kelulusan Santri Baru SMA Gelombang 2 - Malika Islamic Boarding School</title>
+    <title>Pengumuman Kelulusan Gelombang 2 - Malika Islamic Boarding School</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -34,16 +34,41 @@
             background-color: #f8fafc;
             border: 1px solid #e2e8f0;
         }
+
+        .result-item:hover {
+            background-color: #f0f9ff;
+            border-color: #7dd3fc;
+        }
+
+        /* Custom scrollbar for multi-result selection */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col text-center">
 
     <!-- Header Section -->
-    <header class="gradient-bg text-white py-8 px-4 text-center">
+    <header class="gradient-bg text-white py-8 px-6 text-center">
         <div class="max-w-4xl mx-auto flex flex-col items-center">
             <img src="https://iili.io/FsLlXA7.png" alt="Logo Malika" class="logo-circle mb-4">
-            <h1 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">Malika Islamic Boarding School</h1>
-            <p class="mt-2 text-blue-100 font-medium">Pengumuman Hasil Seleksi Jenjang SMA Santri Baru - Gelombang Kedua</p>
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wide leading-tight max-w-[280px] sm:max-w-none">
+                Malika Islamic Boarding School
+            </h1>
+            <p class="mt-3 text-blue-100 font-medium text-sm md:text-base">
+                Pengumuman Hasil Seleksi Jenjang SMA Santri Baru - Gelombang Kedua
+            </p>
         </div>
     </header>
 
@@ -53,23 +78,23 @@
             
             <!-- Search Card -->
             <div class="bg-white rounded-xl p-6 md:p-8 card-shadow mb-8">
-                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center justify-center sm:justify-start">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                     Cek Status Kelulusan
                 </h2>
                 
-                <div class="space-y-4">
+                <div class="space-y-4 text-left">
                     <div>
-                        <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap Santri</label>
-                        <input type="text" id="fullName" placeholder="Masukkan nama lengkap" 
+                        <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">Cari Nama Santri</label>
+                        <input type="text" id="fullName" placeholder="Masukkan nama (depan/tengah/belakang)" 
                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all uppercase">
-                        <p class="mt-2 text-[11px] md:text-xs text-gray-500 flex items-center italic">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <p class="mt-2 text-[11px] md:text-xs text-gray-500 flex items-start italic leading-relaxed">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            Penulisan nama harus sesuai dengan penulisan nama saat pendaftaran
+                            Penulisan nama harus sesuai dengan penulisan nama saat pendaftaran (bisa menggunakan potongan nama)
                         </p>
                     </div>
                     
@@ -94,31 +119,31 @@
     </footer>
 
     <script>
-        // Data Santri dari PDF
+        // Data Santri dengan perbaikan penulisan Asal Sekolah
         const santriData = [
-            { "nama": "ANDHIKA FADHIRRAHMAN", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "MTsN 37 Jakbar" },
-            { "nama": "AHMAD DZUL ILHAM AL FARUQI", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "SMP Islam Terpadu Ar-Rahmah Kota Tangerang" },
-            { "nama": "M ATTHALLAH ZIVANO", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "SMPIT ISLAMICITY" },
-            { "nama": "M. KAWAKIBI ARDIKUSUMA", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "SMP Darul Ishlah" },
-            { "nama": "RAFI MAHARDIKA", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "Pesantren Rubath Nurul Mustofa" },
-            { "nama": "MUHAMMAD AL FAAIZ", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "SMP IT Pondok Pesantren Al Hadi" },
-            { "nama": "NADZUA ANGELINTAN", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Pondok pesantren Al Hadi sungai langka La" },
-            { "nama": "AYU DIAH LARASATI", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "MTs Manba'ul Ulum Asshiddiqiyah" },
-            { "nama": "LATEESHA PUTRI PRANAJAYA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Ponpes An-Nuqthah" },
-            { "nama": "DHEA NURMAULIDA PUTRI", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMPI Ibnu Hajar" },
-            { "nama": "SYAHLIA ANGGRAINY", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Ponpes Darut tasbih Ar rafi" },
-            { "nama": "JIHAN AURELLIA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Daar Fatma" },
-            { "nama": "SASKIA PRATAMA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP Rumah Qur'an" },
-            { "nama": "HANIFA MASTURA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP AL-WILDAN ISLAMIC SCHOOL" },
-            { "nama": "SYAFA SALSABILA NASUTION", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "MTs Nurul Amal Kabupaten Bogor" },
-            { "nama": "FELICIA SAARAH SAKHI", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SPNF SKB Pangkal Pinang" },
-            { "nama": "KHOFIFAH ALYA PARAWANSA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP IT NURUL ILMI 2" },
-            { "nama": "CALISTHA MARSYA AZ-ZAHRA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Ponpes Insan Pratama Boarding school" },
-            { "nama": "NAWA AULIA SYAKIRA NURDIN", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP Al Mansyuriah" },
-            { "nama": "DHESSY MAHARANNY PUTRY", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Pasantren MI Nurul Iman" },
-            { "nama": "KALIFA JASMINE BANAFSANJA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP Islamic Centre" },
-            { "nama": "DAFINAH ALYAARDANI SANTANA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMPIT Ayyusufiah" },
-            { "nama": "NYIMAS AISYAH SYAKIRA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "PPKS Mahad Darul Ulum Al Burhan" }
+            { "id": 1, "nama": "ANDHIKA FADHIRRAHMAN", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "MTsN 37 Jakarta Barat" },
+            { "id": 2, "nama": "AHMAD DZUL ILHAM AL FARUQI", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "SMP Islam Terpadu Ar-Rahmah Kota Tangerang" },
+            { "id": 3, "nama": "M ATTHALLAH ZIVANO", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "SMPIT ISLAMICITY" },
+            { "id": 4, "nama": "M. KAWAKIBI ARDIKUSUMA", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "SMP Darul Ishlah" },
+            { "id": 5, "nama": "RAFI MAHARDIKA", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "Pesantren Rubath Nurul Mustofa" },
+            { "id": 6, "nama": "MUHAMMAD AL FAAIZ", "gender": "Laki-Laki", "tingkat": "SMA", "sekolah": "SMP IT Pondok Pesantren Al Hadi" },
+            { "id": 7, "nama": "NADZUA ANGELINTAN", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Pondok Pesantren Al Hadi Sungai Langka" },
+            { "id": 8, "nama": "AYU DIAH LARASATI", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "MTs Manba'ul Ulum Asshiddiqiyah" },
+            { "id": 9, "nama": "LATEESHA PUTRI PRANAJAYA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Ponpes An-Nuqthah" },
+            { "id": 10, "nama": "DHEA NURMAULIDA PUTRI", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMPI Ibnu Hajar" },
+            { "id": 11, "nama": "SYAHLIA ANGGRAINY", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Ponpes Darut Tasbih Ar Rafi" },
+            { "id": 12, "nama": "JIHAN AURELLIA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Daar Fatma" },
+            { "id": 13, "nama": "SASKIA PRATAMA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP Rumah Quran" },
+            { "id": 14, "nama": "HANIFA MASTURA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP AL-WILDAN ISLAMIC SCHOOL" },
+            { "id": 15, "nama": "SYAFA SALSABILA NASUTION", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "MTs Nurul Amal Kabupaten Bogor" },
+            { "id": 16, "nama": "FELICIA SAARAH SAKHI", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SPNF SKB Pangkal Pinang" },
+            { "id": 17, "nama": "KHOFIFAH ALYA PARAWANSA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP IT NURUL ILMI 2" },
+            { "id": 18, "nama": "CALISTHA MARSYA AZ-ZAHRA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Ponpes Insan Pratama Boarding School" },
+            { "id": 19, "nama": "NAWA AULIA SYAKIRA NURDIN", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP Al Mansyuriah" },
+            { "id": 20, "nama": "DHESSY MAHARANNY PUTRY", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "Pesantren MI Nurul Iman" },
+            { "id": 21, "nama": "KALIFA JASMINE BANAFSANJA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMP Islamic Centre" },
+            { "id": 22, "nama": "DAFINAH ALYAARDANI SANTANA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "SMPIT Ayyusufiah" },
+            { "id": 23, "nama": "NYIMAS AISYAH SYAKIRA", "gender": "Perempuan", "tingkat": "SMA", "sekolah": "PPKS Mahad Darul Ulum Al Burhan" }
         ];
 
         function checkGraduation() {
@@ -127,109 +152,156 @@
             const loader = document.getElementById('loader');
             const btnText = document.getElementById('btnText');
 
-            if (!inputName) {
-                showModal("Peringatan", "Silakan masukkan nama lengkap Anda.");
+            if (inputName.length < 2) {
+                showModal("Peringatan", "Silakan masukkan minimal 2 karakter untuk melakukan pencarian.");
                 return;
             }
 
-            btnText.innerText = "SEDANG MEMPROSES...";
+            btnText.innerText = "MENCARI DATA...";
             loader.classList.remove('hidden');
             resultContainer.classList.add('hidden');
 
             setTimeout(() => {
-                const foundSantri = santriData.find(s => s.nama === inputName);
+                const matches = santriData.filter(s => s.nama.includes(inputName));
                 
                 loader.classList.add('hidden');
                 btnText.innerText = "LIHAT HASIL";
                 resultContainer.classList.remove('hidden');
 
-                if (foundSantri) {
-                    resultContainer.innerHTML = `
-                        <div class="bg-white rounded-xl overflow-hidden card-shadow border border-green-100 mb-10">
-                            <div class="bg-green-600 text-white px-6 py-4 flex justify-between items-center">
-                                <h3 class="font-bold text-lg italic uppercase">SELAMAT! ANDA DINYATAKAN LULUS</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="p-6 md:p-8">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 pb-8 border-b border-gray-100">
-                                    <div>
-                                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Nama Lengkap</p>
-                                        <p class="text-lg font-bold text-gray-800">${foundSantri.nama}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Jenis Kelamin</p>
-                                        <p class="text-lg font-bold text-gray-800">${foundSantri.gender}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Tingkat / Jenjang</p>
-                                        <p class="text-lg font-bold text-gray-800">${foundSantri.tingkat}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Asal Sekolah</p>
-                                        <p class="text-lg font-bold text-gray-800">${foundSantri.sekolah}</p>
-                                    </div>
-                                </div>
-
-                                <div class="bg-blue-50 rounded-lg p-5 border border-blue-100 mb-6 text-left">
-                                    <h4 class="font-bold text-blue-800 mb-3 flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        Pemberitahuan Selanjutnya:
-                                    </h4>
-                                    
-                                    <div class="space-y-4 text-sm text-gray-700 leading-relaxed">
-                                        <div>
-                                            <p class="font-semibold text-gray-900 mb-2">1. Melakukan pelunasan biaya uang masuk sebesar <span class="text-blue-700">Rp15.000.000,- (lima belas juta rupiah)</span> dengan ketentuan sebagai berikut:</p>
-                                            <div class="bank-card p-4 rounded-lg my-2 border-l-4 border-blue-600">
-                                                <p class="text-xs text-gray-500 uppercase font-bold">Transfer ke Rekening:</p>
-                                                <p class="text-lg font-bold text-gray-800 tracking-wider">008800328612</p>
-                                                <p class="font-medium text-gray-700">Bank Danamon</p>
-                                                <p class="text-sm text-gray-600">a.n. Malika Islamic School</p>
-                                            </div>
-                                            <ul class="list-disc ml-5 space-y-1 mt-2">
-                                                <li>Pelunasan paling lambat dilaksanakan pada <span class="font-bold text-gray-900">17 Mei 2026</span>.</li>
-                                                <li>Apabila hingga batas waktu tersebut pelunasan belum dilakukan, maka hak penerimaan dinyatakan <span class="text-red-600 font-bold uppercase underline">gugur</span> dan kuota akan dialihkan kepada calon santri lain sesuai kebijakan Panitia PSB.</li>
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <p class="font-semibold text-gray-900">2. Lulus psikotes</p>
-                                            <p class="ml-4 italic text-gray-600">Estimasi pelaksanaan tes di akhir Mei 2026 (jadwal detail akan diinfokan kemudian).</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
+                if (matches.length === 1) {
+                    showSuccess(matches[0]);
+                } else if (matches.length > 1) {
+                    showSelection(matches);
                 } else {
-                    resultContainer.innerHTML = `
-                        <div class="bg-white rounded-xl overflow-hidden card-shadow border border-red-100">
-                            <div class="bg-gray-700 text-white px-6 py-4 flex justify-between items-center">
-                                <h3 class="font-bold text-lg italic uppercase">HASIL TIDAK DITEMUKAN</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="p-8 text-center">
-                                <p class="text-gray-700 text-lg font-medium leading-relaxed mb-4">
-                                    Terima kasih atas ikhtiar dan semangat yang telah ditunjukkan dalam seluruh rangkaian seleksi di Malika IBS.
-                                </p>
-                                <p class="text-gray-600">
-                                    Setiap anak memiliki jalan belajar dan waktu terbaiknya masing-masing. Sukses selalu.
-                                </p>
-                                <div class="mt-6 pt-6 border-t border-gray-50">
-                                    <p class="text-[10px] text-gray-400 italic">Nama "${inputName}" tidak ditemukan dalam daftar Kelulusan Gelombang Kedua.</p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
+                    showFailure(inputName);
                 }
                 
                 resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 1000);
+            }, 800);
+        }
+
+        function showSelection(matches) {
+            const resultContainer = document.getElementById('resultContainer');
+            let listHtml = matches.map(s => `
+                <button onclick="selectSantri(${s.id})" class="result-item w-full text-left p-4 mb-2 bg-white border border-gray-200 rounded-lg transition-all flex items-center justify-between group">
+                    <div class="pr-4">
+                        <p class="font-bold text-gray-800 group-hover:text-blue-600">${s.nama}</p>
+                        <p class="text-xs text-gray-500">${s.sekolah}</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300 group-hover:text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            `).join('');
+
+            resultContainer.innerHTML = `
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-6 text-left animate-in fade-in slide-in-from-bottom-4 duration-300">
+                    <h3 class="font-bold text-blue-800 mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Ditemukan ${matches.length} hasil. Silakan pilih nama Anda:
+                    </h3>
+                    <div class="max-h-60 overflow-y-auto pr-2 custom-scrollbar">
+                        ${listHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectSantri(id) {
+            const santri = santriData.find(s => s.id === id);
+            showSuccess(santri);
+            window.scrollTo({ top: document.getElementById('resultContainer').offsetTop - 20, behavior: 'smooth' });
+        }
+
+        function showSuccess(foundSantri) {
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = `
+                <div class="bg-white rounded-xl overflow-hidden card-shadow border border-green-100 mb-10 animate-in fade-in zoom-in duration-300">
+                    <div class="bg-green-600 text-white px-6 py-4 flex justify-between items-center">
+                        <h3 class="font-bold text-lg italic uppercase">SELAMAT! ANDA DINYATAKAN LULUS</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 pb-8 border-b border-gray-100 text-left">
+                            <div>
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Nama Lengkap</p>
+                                <p class="text-lg font-bold text-gray-800">${foundSantri.nama}</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Jenis Kelamin</p>
+                                <p class="text-lg font-bold text-gray-800">${foundSantri.gender}</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Tingkat / Jenjang</p>
+                                <p class="text-lg font-bold text-gray-800">${foundSantri.tingkat}</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Asal Sekolah</p>
+                                <p class="text-lg font-bold text-gray-800">${foundSantri.sekolah}</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-lg p-5 border border-blue-100 mb-6 text-left">
+                            <h4 class="font-bold text-blue-800 mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Pemberitahuan Selanjutnya:
+                            </h4>
+                            
+                            <div class="space-y-4 text-sm text-gray-700 leading-relaxed">
+                                <div>
+                                    <p class="font-semibold text-gray-900 mb-2">1. Melakukan pelunasan biaya uang masuk sebesar <span class="text-blue-700 font-bold">Rp15.000.000,- (lima belas juta rupiah)</span> dengan ketentuan sebagai berikut:</p>
+                                    <div class="bank-card p-4 rounded-lg my-2 border-l-4 border-blue-600">
+                                        <p class="text-xs text-gray-500 uppercase font-bold">Transfer ke Rekening:</p>
+                                        <p class="text-lg font-bold text-gray-800 tracking-wider">008800328612</p>
+                                        <p class="font-medium text-gray-700">Bank Danamon</p>
+                                        <p class="text-sm text-gray-600">a.n. Malika Islamic School</p>
+                                    </div>
+                                    <ul class="list-disc ml-5 space-y-1 mt-2">
+                                        <li>Pelunasan paling lambat dilaksanakan pada <span class="font-bold text-gray-900">17 Mei 2026</span>.</li>
+                                        <li>Apabila hingga batas waktu tersebut pelunasan belum dilakukan, maka hak penerimaan dinyatakan <span class="text-red-600 font-bold uppercase underline">gugur</span> dan kuota akan dialihkan kepada calon santri lain sesuai kebijakan Panitia PSB.</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <p class="font-semibold text-gray-900">2. Lulus psikotes</p>
+                                    <p class="ml-4 italic text-gray-600">Estimasi pelaksanaan tes di akhir Mei 2026 (jadwal detail akan diinfokan kemudian).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showFailure(inputName) {
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = `
+                <div class="bg-white rounded-xl overflow-hidden card-shadow border border-red-100 animate-in fade-in zoom-in duration-300">
+                    <div class="bg-gray-700 text-white px-6 py-4 flex justify-between items-center">
+                        <h3 class="font-bold text-lg italic uppercase">HASIL TIDAK DITEMUKAN</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="p-8 text-center">
+                        <p class="text-gray-700 text-lg font-medium leading-relaxed mb-4 text-center">
+                            Terima kasih atas ikhtiar dan semangat yang telah ditunjukkan dalam seluruh rangkaian seleksi di Malika IBS.
+                        </p>
+                        <p class="text-gray-600 mb-6 text-center">
+                            Setiap anak memiliki jalan belajar dan waktu terbaiknya masing-masing. Sukses selalu.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-gray-50">
+                            <p class="text-[10px] text-gray-400 italic uppercase tracking-tight">Pencarian: "${inputName}" Tidak Ditemukan</p>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
         document.getElementById('fullName').addEventListener('keypress', function (e) {
@@ -243,7 +315,7 @@
                 <div id="customModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
                     <div class="bg-white rounded-xl p-6 max-w-sm w-full card-shadow animate-in zoom-in duration-300">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">${title}</h3>
-                        <p class="text-gray-600 mb-6">${message}</p>
+                        <p class="text-gray-600 mb-6 text-left">${message}</p>
                         <button onclick="closeModal()" class="w-full gradient-bg text-white font-bold py-2 rounded-lg">OKE</button>
                     </div>
                 </div>
